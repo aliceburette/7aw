@@ -1,3 +1,51 @@
-<p>
-  admin-register-edit works!
-</p>
+<app-admin-menubar></app-admin-menubar>
+<form *ngIf="member !== undefined" class="col-8 offset-2">
+
+  <div>
+    <label>Nom</label>
+    <input type="text" class="form-control" value="{{member.NOM}}" (change)="setLastname($event)">
+  </div>
+
+  <div>
+    <label>Prénom</label>
+    <input type="text" class="form-control" value="{{member.PRENOM}}" (change)="setFirstname($event)">
+  </div>
+
+  <div>
+    <label>Date de naissance</label>
+    <input type="text" class="form-control" value="{{member.DATE_NAISSANCE}}" (change)="setBirthday($event)">
+  </div>
+
+  <div>
+    <label>Adresse email</label>
+    <input type="text" class="form-control" value="{{member.EMAIL}}" (change)="setEmail($event)">
+  </div>
+
+  <div>
+    <label>Téléphone</label>
+    <input type="text" class="form-control" value="{{member.TELEPHONE}}" (change)="setPhone($event)">
+  </div>
+
+  <div>
+    <label>Numéro de licence</label>
+    <input type="text" class="form-control" value="{{member.NUM_LICENCE}}" (change)="setLicence($event)">
+  </div>
+  <br>
+
+  <div>
+    <input type="checkbox" class="form-check-input" id="cashedCheck" [checked]="member.EN_REGLE == 1" value="{{member.EN_REGLE}}" (change)="setCheck($event)">
+    <label>Chèque encaissé</label>
+  </div>
+
+  <div>
+    <select>
+      <option>test</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <button type="submit" (click)="send()" class="btn btn-success">Enregistrer</button>
+    <button type="button" (click)="delete()" class="btn btn-danger float-right">Supprimer l'adhérent</button>
+  </div>
+
+</form>
