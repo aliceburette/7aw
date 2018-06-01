@@ -23,10 +23,10 @@ const port = process.env.PORT || 4000;
 //BD
 
 conn = {
-  host: 'localhost',
-  user: 'root',
-  password:'',
-  database:'7aw'
+  host: 'ocvwlym0zv3tcn68.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+  user: 'txnb9ng1bacmv80e',
+  password:'nobx362e4507w91c ',
+  database:'i5g4kmzkx0bbqnf1'
 };
 
 myConnection = require('express-myconnection');
