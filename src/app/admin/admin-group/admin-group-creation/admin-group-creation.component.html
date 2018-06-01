@@ -1,0 +1,15 @@
+<app-admin-menubar></app-admin-menubar>
+<form [formGroup]="groupForm" id="groupForm" class="col-8 offset-2">
+  <div class="form-group">
+    <label>Nom du groupe</label>
+    <input type="text" formControlName="nom" class="form-control" maxlength="30">
+  </div>
+
+  <div class="form-group">
+    <label>Description</label>
+    <input type="text" formControlName="description" class="form-control" maxlength="200">
+  </div>
+
+  <button (click)="send()" type="submit" class="btn btn-success" routerLink="/admin-group" routerLinkActive="active">Créer</button>
+
+</form>

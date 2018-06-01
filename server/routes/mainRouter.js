@@ -2,8 +2,16 @@
 const express = require('express');
 const mainRouter = express();
 
-registeredRoute = require('./registeredRoute');
+memberRoute = require('./memberRoute');
+mainRouter.use('/member', memberRoute);
 
-mainRouter.use('/registered', registeredRoute);
+groupRoute = require('./groupRoute');
+mainRouter.use('/group', groupRoute);
+
+registerRoute = require('./registerRoute');
+mainRouter.use('/register', registerRoute);
+
+slotRoute = require('./slotRoute');
+mainRouter.use('/slot', slotRoute);
 
 module.exports = mainRouter;

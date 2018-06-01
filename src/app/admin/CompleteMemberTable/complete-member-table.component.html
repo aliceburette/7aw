@@ -1,0 +1,22 @@
+<div class="col-8 offset-2">
+  <table class="table table-hover table-bordered">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">Nom</th>
+      <th scope="col">Prénom</th>
+      <th scope="col">Année</th>
+      <th scope="col">N° licence</th>
+    </tr>
+    </thead>
+    <tbody>
+
+      <tr *ngFor="let member of completeMember" class="clickable-row" routerLink="/admin-member/{{member.id_adherent}}" routerLinkActive="active">
+        <td>{{member.nom}}</td>
+        <td>{{member.prenom}}</td>
+        <td>{{member.date_naissance}}</td>
+        <td>{{member.num_licence}}</td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,37 @@
+<app-admin-menubar></app-admin-menubar>
+<form *ngIf="group !== undefined" class="col-8 offset-2">
+
+  <div class="form-group">
+    <label>Nom du groupe</label>
+    <input type="text" class="form-control" value="{{group.nom}}" maxlength="30" (change)="setName($event)">
+  </div>
+
+  <div class="form-group">
+    <label>Description</label>
+    <input type="text" formControlName="description" class="form-control" value="{{group.description}}" maxlength="200" (change)="setDescription($event)">
+  </div>
+
+  <!--<table class="table table-hover table-bordered">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">Nom</th>
+      <th scope="col">Prénom</th>
+      <th scope="col">Année</th>
+      <th scope="col">N° licence</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr *ngFor="let member of incompleteMember" class="clickable-row">
+      <td>{{member.nom}}</td>
+      <td>{{member.prenom}}</td>
+      <td>{{member.date_naissance}}</td>
+      <td>{{member.num_licence}}</td>
+    </tr>
+
+    </tbody>
+  </table>-->
+
+  <button class="btn btn-success">Modifier</button>
+
+</form>

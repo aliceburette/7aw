@@ -1,4 +1,4 @@
-<form id="membershipForm" class="col-8 offset-2">
+<form [formGroup]="membershipForm" id="membershipForm" class="col-8 offset-2">
 
   <p>Merci de bien vouloir remplir le formulaire ci-dessous afin de procéder à une demande d'adhésion au club 7 à l'ouest pour la prochaine saison.
     <br>
@@ -10,28 +10,29 @@
   <div class = "form-group">
     <div class="row">
       <div class="col">
-        <input type="text" class="form-control" placeholder="First name">
+        <input type="text" formControlName="prenom" class="form-control" placeholder="First name">
       </div>
     <div class="col">
-      <input type="text" class="form-control" placeholder="Last name">
+      <input type="text" formControlName="nom" class="form-control" placeholder="Last name">
     </div>
     </div>
   </div>
 
   <div class="form-group">
     <label>Date de naissance de l'adhérent</label>
-    <input type="date" class="form-control">
+    <input type="date" formControlName="date_naissance" class="form-control">
   </div>
 
   <h1>Contact</h1>
   <p>Si la demande d'adhésion concerne un enfant, renseigner les informations permettant de contacter un parent ou tuteur.</p>
 
   <div class="form-group">
-    <input type="email" class="form-control" placeholder="Adresse Email">
+    <input type="email" formControlName="email" class="form-control" placeholder="Adresse Email">
   </div>
 
   <div class="form-group">
-    <input type="tel" class="form-control" placeholder="Téléphone">
+    <input type="tel" formControlName="telephone" class="form-control" placeholder="Téléphone">
   </div>
 
+  <button (click)="send()" type="submit" class="btn btn-success">Envoyer</button>
 </form>

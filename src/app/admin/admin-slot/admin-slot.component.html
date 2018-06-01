@@ -1,0 +1,46 @@
+<app-admin-menubar></app-admin-menubar>
+
+<form [formGroup]="slotForm" class="col-8 offset-2">
+
+  <div class="form-group">
+    <label>Jour</label>
+    <select class="form-control" formControlName="jour">
+      <option>Lundi</option>
+      <option>Mardi</option>
+      <option>Mercredi</option>
+      <option>Jeudi</option>
+      <option>Vendredi</option>
+      <option>Samedi</option>
+      <option>Dimanche</option>
+    </select>
+  </div>
+
+  <div class = "form-group">
+    <div class="row">
+
+      <div class="col">
+        <label>Heure de début</label>
+        <input type="text" class="form-control" formControlName="heure_debut">
+      </div>
+
+      <div class="col">
+        <label>Heure de fin</label>
+        <input type="text" class="form-control" formControlName="heure_fin">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Encadrant</label>
+      <input type="text" class="form-control" formControlName="encadrant">
+    </div>
+
+    <div class="form-group">
+      <label>Groupe</label>
+      <select class="form-control" formControlName="id_groupe">
+        <option *ngFor="let gr of group" value="{{gr.id_groupe}}">{{gr.nom}}</option>
+      </select>
+    </div>
+
+    <button (click)="send()" type="submit" class="btn btn-success">Créer</button>
+  </div>
+</form>

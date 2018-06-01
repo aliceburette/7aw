@@ -1,6 +1,6 @@
 <!--<div class="col-1">
   <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-    <a class="nav-link active" data-toggle="pill" role="tab" aria-selected="true" routerLink="/admin-register" routerLinkActive="active">Adhérents</a>
+    <a class="nav-link active" data-toggle="pill" role="tab" aria-selected="true" routerLink="/admin-member" routerLinkActive="active">Adhérents</a>
     <a class="nav-link" data-toggle="pill" role="tab" aria-selected="false" routerLink="/admin-planning" routerLinkActive="active">Planning</a>
     <a class="nav-link" data-toggle="pill" role="tab" aria-selected="false" routerLink="/admin-contest" routerLinkActive="active">Compétitions</a>
     <a class="nav-link" data-toggle="pill" role="tab" aria-selected="false">???</a>
@@ -8,23 +8,20 @@
 </div>-->
 
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="adminmenu">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarAdmin" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarAdmin">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link active" data-toggle="pill" role="tab" aria-selected="true" routerLink="/admin-register" routerLinkActive="active">Adhérents</a>
+        <a class="nav-link" data-toggle="pill" role="tab" aria-selected="true" routerLink="/admin-member" routerLinkActive="active">Adhérents</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" data-toggle="pill" role="tab" aria-selected="false" routerLink="/admin-planning" routerLinkActive="active">Planning</a>
+        <a class="nav-link" data-toggle="pill" role="tab" aria-selected="false" routerLink="/admin-group" routerLinkActive="active">Groupes</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" data-toggle="pill" role="tab" aria-selected="false" routerLink="/admin-contest" routerLinkActive="active">Compétitions</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="pill" role="tab" aria-selected="false">???</a>
+        <a class="nav-link" data-toggle="pill" role="tab" aria-selected="false" routerLink="/admin-slot" routerLinkActive="active">Créneaux</a>
       </li>
     </ul>
   </div>

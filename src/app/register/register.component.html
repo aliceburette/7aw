@@ -1,17 +1,25 @@
-<form id="registerForm" class="col-8 offset-2">
+<form [formGroup]="registerForm" id="registerForm" class="col-8 offset-2">
+
   <div class="form-group">
-    <label for="lastname">Addresse Email</label>
-    <input type="email" class="form-control" id="lastname" name="lastname" placeholder="Nom">
-  </div>
-  <div class="form-group">
-    <label for="firstname">Addresse Email</label>
-    <input type="email" class="form-control" id="firstname" name="firstname" placeholder="Prénom">
-  </div>
-  <div class="form-group">
-    <label for="email">Addresse Email</label>
-    <input type="email" class="form-control" id="email" name="email" placeholder="nom.prenom@exemple.com">
+    <label>Nom</label>
+    <input type="text" class="form-control" formControlName="nom" maxlength="30">
   </div>
 
-  <p></p>
+  <div class="form-group">
+    <label>Prénom</label>
+    <input type="text" class="form-control" formControlName="prenom" maxlength="30">
+  </div>
+
+  <div class="form-group">
+    <label>Adresse Email</label>
+    <input type="email" class="form-control" formControlName="email">
+  </div>
+
+  <div class="form-group">
+    <label>Mot de passe</label>
+    <input type="password" class="form-control" formControlName="password">
+  </div>
+
+  <button (click)="send()" type="submit" class="btn btn-success" routerLink="/connect" routerLinkActive="active">Creer un compte</button>
 
 </form>
