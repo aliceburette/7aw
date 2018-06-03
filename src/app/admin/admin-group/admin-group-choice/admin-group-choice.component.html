@@ -1,0 +1,19 @@
+<app-admin-menubar></app-admin-menubar>
+<form [formGroup]="groupChoiceForm" class="col-8 offset-2">
+  <div class="form-group">
+    <label>Groupe</label>
+    <select formControlName="id_groupe" (change)="changeGroup($event)" class="form-control">
+      <option *ngFor="let group of allGroups" value="{{group.id_groupe}}">{{group.nom}}</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Adhérent</label>
+    <select formControlName="id_adherent" (change)="changeMember($event)" class="form-control">
+      <option *ngFor="let member of allMembers" value="{{member.id_adherent}}">{{member.nom}} {{member.prenom}} n°{{member.num_licence}}</option>
+    </select>
+  </div>
+
+  <button (click)="send()" type="submit" class="btn btn-success" routerLink="/admin-group-choice" routerLinkActive="active">Créer</button>
+
+</form>

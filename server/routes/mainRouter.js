@@ -14,4 +14,7 @@ mainRouter.use('/register', registerRoute);
 slotRoute = require('./slotRoute');
 mainRouter.use('/slot', slotRoute);
 
+groupChoiceRoute = require('./groupChoiceRoute');
+mainRouter.use('/groupChoice', groupChoiceRoute);
+
 module.exports = mainRouter;

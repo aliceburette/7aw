@@ -12,6 +12,7 @@ import {AdminSlotComponent} from './admin/admin-slot/admin-slot.component';
 import {MembersComponent} from './members/members.component';
 import {AuthGuard} from './auth.guard';
 import {AdminGuard} from './admin.guard';
+import {AdminGroupChoiceComponent} from './admin/admin-group/admin-group-choice/admin-group-choice.component';
 
 const routes: Routes = [
   {path: 'connect', component: ConnectComponent},
@@ -24,7 +25,8 @@ const routes: Routes = [
   {path: 'admin-group-creation', component: AdminGroupCreationComponent, canActivate: [AuthGuard, AdminGuard]},
   {path: 'admin-group/:idGroup', component: AdminGroupEditComponent, canActivate: [AuthGuard, AdminGuard]},
   {path: 'admin-slot', component: AdminSlotComponent, canActivate: [AuthGuard, AdminGuard]},
-  {path: 'members', component: MembersComponent, canActivate: [AuthGuard]}
+  {path: 'members', component: MembersComponent, canActivate: [AuthGuard]},
+  {path: 'admin-group-choice', component: AdminGroupChoiceComponent, canActivate: [AuthGuard, AdminGuard]}
 ];
 
 @NgModule({

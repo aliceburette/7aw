@@ -20,6 +20,7 @@ import { AdminGroupEditComponent } from './admin/admin-group/admin-group-edit/ad
 import { AdminSlotComponent } from './admin/admin-slot/admin-slot.component';
 import { MembersComponent } from './members/members.component';
 import {TokenInterceptorService} from './share/service/token-interceptor.service';
+import { AdminGroupChoiceComponent } from './admin/admin-group/admin-group-choice/admin-group-choice.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import {TokenInterceptorService} from './share/service/token-interceptor.service
     AdminGroupCreationComponent,
     AdminGroupEditComponent,
     AdminSlotComponent,
-    MembersComponent
+    MembersComponent,
+    AdminGroupChoiceComponent
   ],
   imports: [
     BrowserModule,

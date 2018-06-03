@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {MemberService} from '../../../share/service/member.service';
 import {Member} from '../../../share/model/member.models';
-import {Observable} from 'rxjs';
+import {GroupService} from '../../../share/service/group.service';
+import {Group} from '../../../share/model/group.models';
+import {GroupChoiceService} from '../../../share/service/group-choice.service';
+import {GroupChoice} from '../../../share/model/groupChoice.models';
 
 @Component({
   selector: 'app-admin-member-edit',
@@ -13,8 +16,9 @@ export class AdminMemberEditComponent implements OnInit {
 
   public idMember: number;
   public member: Member;
+  public allGroups: Group[];
 
-  constructor(private route: ActivatedRoute, private memberService: MemberService, private router: Router) { }
+  constructor(private route: ActivatedRoute, private memberService: MemberService, private router: Router, private groupService: GroupService, private groupChoiceService: GroupChoiceService) { }
 
   ngOnInit() {
     this.idMember = parseInt(this.route.snapshot.paramMap.get('idMember'), 0);
@@ -23,6 +27,9 @@ export class AdminMemberEditComponent implements OnInit {
       this.member = member;
       console.log(member);
   });
+    this.groupService.getAll().subscribe( group => {
+      this.allGroups = group;
+    });
   }
 
   setLastname(event) {

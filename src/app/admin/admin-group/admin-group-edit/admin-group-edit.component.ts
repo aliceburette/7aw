@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Member} from '../../../share/model/member.models';
-import {MemberService} from '../../../share/service/member.service';
 import {GroupService} from '../../../share/service/group.service';
 import {Group} from '../../../share/model/group.models';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-admin-group-edit',
@@ -10,15 +9,17 @@ import {Group} from '../../../share/model/group.models';
   styleUrls: ['./admin-group-edit.component.scss']
 })
 export class AdminGroupEditComponent implements OnInit {
-  incompleteMember: Member[];
-  group: Group;
+  public group: Group;
+  public idGroup: number;
 
-  constructor(private memberService: MemberService, private groupService: GroupService) { }
+  constructor(private route: ActivatedRoute, private groupService: GroupService) { }
 
   ngOnInit() {
-    this.memberService.getIncomplete().subscribe(member => {
-      this.incompleteMember = member;
-      console.log(member);
+    this.idGroup = parseInt(this.route.snapshot.paramMap.get('idGroup'), 0);
+    console.log(this.idGroup);
+    this.groupService.getGroup(this.idGroup).subscribe(group => {
+      this.group = group;
+      console.log(group);
     });
   }
 
@@ -28,6 +29,11 @@ export class AdminGroupEditComponent implements OnInit {
 
   setDescription(event) {
     this.group.description = event.target.value;
+  }
+
+  send() {
+    console.log(this.group);
+    this.groupService.update(this.group).subscribe();
   }
 
 }
