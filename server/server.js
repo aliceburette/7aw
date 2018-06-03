@@ -25,7 +25,7 @@ const port = process.env.PORT || 4000;
 conn = {
   host: 'ocvwlym0zv3tcn68.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
   user: 'txnb9ng1bacmv80e',
-  password:'nobx362e4507w91c ',
+  password:'nobx362e4507w91c',
   database:'i5g4kmzkx0bbqnf1'
 };
 

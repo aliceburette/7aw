@@ -1,6 +1,6 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">7aW</a>
+  <a class="navbar-brand">7aW</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -10,16 +10,19 @@
         <a class="nav-link" routerLink="/members" routerLinkActive="active">ADHÉRENTS</a>
       </li>
 
-      <li class="nav-item">
+      <li *ngIf="registerService.isAdmin()" class="nav-item">
         <a class="nav-link" routerLink="/admin-member" routerLinkActive="active">ADMINISTRATEUR</a>
       </li>
     </ul>
     <ul class="navbar-nav" id="rightMenuBar">
-      <li class="nav-item">
+      <li *ngIf="!registerService.loggedIn()" class="nav-item">
         <a style="font-size:16px" class="nav-link" routerLink="/connect" routerLinkActive="active">Connexion</a>
       </li>
-      <li id="createAccount" class="nav-item">
+      <li *ngIf="!registerService.loggedIn()" id="createAccount" class="nav-item">
         <a style="font-size:16px" class="nav-link" routerLink="/register" routerLinkActive="active">Créer un compte</a>
+      </li>
+      <li *ngIf="registerService.loggedIn()" class="nav-item">
+        <a (click)="registerService.logOut()" style="font-size:16px" class="nav-link" routerLink="/connect" routerLinkActive="active">Déconnexion</a>
       </li>
     </ul>
 

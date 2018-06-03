@@ -7,7 +7,6 @@ import { MenubarComponent } from './menubar/menubar.component';
 import { ConnectComponent } from './connect/connect.component';
 import { RegisterComponent } from './register/register.component';
 import { MembershipComponent } from './membership/membership.component';
-import { AdminComponent } from './admin/admin.component';
 import { AdminMemberComponent } from './admin/admin-member/admin-member.component';
 import { AdminMenubarComponent } from './admin/admin-menubar/admin-menubar.component';
 import { AdminMemberEditComponent } from './admin/admin-member/admin-member-edit/admin-member-edit.component';
@@ -29,7 +28,6 @@ import {TokenInterceptorService} from './share/service/token-interceptor.service
     ConnectComponent,
     RegisterComponent,
     MembershipComponent,
-    AdminComponent,
     AdminMemberComponent,
     AdminMenubarComponent,
     AdminMemberEditComponent,

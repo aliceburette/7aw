@@ -1,10 +1,11 @@
 // Modules
 const express = require('express');
 const memberRoute = express.Router();
+const token = require('../controller/token');
 
 memberController = require('../controller/member');
 
-memberRoute.get('/getComplete',(req, res) => {
+memberRoute.get('/getComplete', (req, res) => {
   memberController.getComplete(req, member => {
     return res.status(200).json(member);
   });
@@ -12,6 +13,12 @@ memberRoute.get('/getComplete',(req, res) => {
 
 memberRoute.get('/getIncomplete',(req, res) => {
   memberController.getIncomplete(req, member => {
+    return res.status(200).json(member);
+  });
+});
+
+memberRoute.get('/getByRegister', token.verifyToken, (req, res) => {
+  memberController.getByRegister(req, req.id_utilisateur,member => {
     return res.status(200).json(member);
   });
 });
@@ -27,7 +34,7 @@ memberRoute.get('/:idMember',(req, res) => {
   });
 });
 
-memberRoute.post('/create', (req, res) => {
+memberRoute.post('/create', token.verifyToken, (req, res) => {
   memberController.create(req, member => {
     return res.status(200).json(member);
   });
@@ -40,7 +47,7 @@ memberRoute.put('/update', (req, res) => {
   });
 });
 
-memberRoute.delete('/delete/:idMember', (req, res) => {
+memberRoute.delete('/delete/:idMember', token.verifyAdmin, (req, res) => {
   console.log();
   memberController.delete(req, req.params.idMember, member => {
     return res.status(200).json(member);

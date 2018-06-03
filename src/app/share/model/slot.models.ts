@@ -1,8 +1,8 @@
 export interface Slot {
-  ID_CRENEAU: number;
-  JOUR: string;
-  HEURE_DEBUT: string;
-  HEURE_FIN: string;
-  ENCADRANT: string;
-  ID_GROUPE: number;
+  id_creneau: number;
+  jour: string;
+  heure_debut: string;
+  heure_fin: string;
+  encadrant: string;
+  id_groupe: number;
 }

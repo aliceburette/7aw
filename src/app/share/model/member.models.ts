@@ -1,12 +1,12 @@
 export interface Member {
-  ID_ADHERENT: number;
-  NOM: string;
-  PRENOM: string;
-  DATE_NAISSANCE: string;
-  NUM_LICENCE: number;
-  EN_REGLE: boolean;
-  ID_UTILISATEUR: number;
-  ID_GROUPE: number;
-  EMAIL: string;
-  TELEPHONE: string;
+  id_adherent: number;
+  nom: string;
+  prenom: string;
+  date_naissance: string;
+  num_licence: number;
+  en_regle: boolean;
+  id_utilisateur: number;
+  id_groupe: number;
+  email: string;
+  telephone: string;
 }

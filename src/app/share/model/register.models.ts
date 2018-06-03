@@ -1,7 +1,7 @@
 export interface Register {
-  ID_UTILISTEUR: number;
-  NOM: string;
-  PRENOM: string;
-  EMAIL: string;
-  ADMINISTRATEUR: number;
+  id_utilisateur: number;
+  nom: string;
+  prenom: string;
+  email: string;
+  administrateur: number;
 }

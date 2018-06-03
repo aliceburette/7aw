@@ -1,5 +1,5 @@
 export interface Group {
-  ID_GROUPE: number;
-  NOM: string;
-  DESCRIPTION: string;
+  id_groupe: number;
+  nom: string;
+  description: string;
 }

@@ -26,27 +26,27 @@ export class AdminMemberEditComponent implements OnInit {
   }
 
   setLastname(event) {
-    this.member.NOM = event.target.value;
+    this.member.nom = event.target.value;
   }
 
   setFirstname(event) {
-    this.member.PRENOM = event.target.value;
+    this.member.prenom = event.target.value;
   }
 
   setBirthday(event) {
-    this.member.DATE_NAISSANCE = event.target.value;
+    this.member.date_naissance = event.target.value;
   }
 
   setEmail(event) {
-    this.member.EMAIL = event.target.value;
+    this.member.email = event.target.value;
   }
 
   setPhone(event) {
-    this.member.TELEPHONE = event.target.value;
+    this.member.telephone = event.target.value;
   }
 
   setLicence(event) {
-    this.member.NUM_LICENCE = event.target.value;
+    this.member.num_licence = event.target.value;
   }
 
   setCheck(event) {
@@ -56,7 +56,7 @@ export class AdminMemberEditComponent implements OnInit {
       event.target.value = 0;
     }
     console.log(event.target.value);
-    this.member.EN_REGLE = event.target.value;
+    this.member.en_regle = event.target.value;
   }
 
   send() {
@@ -65,7 +65,7 @@ export class AdminMemberEditComponent implements OnInit {
   }
 
   delete() {
-    this.memberService.delete(this.member.ID_ADHERENT).subscribe(res => {
+    this.memberService.delete(this.member.id_adherent).subscribe(res => {
       this.router.navigate(['/admin-member']);
     });
   }

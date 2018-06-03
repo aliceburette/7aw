@@ -1,4 +1,27 @@
-<p>AFFICHER MES ADHÉRENTS</p>
+<div class="col-8 offset-2" style="margin-top: 5vw;">
+  <table class="table table-hover table-bordered">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">Nom</th>
+      <th scope="col">Prénom</th>
+      <th scope="col">Année</th>
+      <th scope="col">N° licence</th>
+    </tr>
+    </thead>
+    <tbody>
 
-<button class="btn btn-success" routerLink="/membership" routerLinkActive="active">Faire une demande d'adhésion</button>
+    <tr *ngFor="let member of myMembers" class="clickable-row">
+      <td>{{member.nom}}</td>
+      <td>{{member.prenom}}</td>
+      <td>{{member.date_naissance}}</td>
+      <td>{{member.num_licence}}</td>
+    </tr>
+
+    </tbody>
+  </table>
+
+  <button class="btn btn-success" routerLink="/membership" routerLinkActive="active">Faire une demande d'adhésion</button>
+
+</div>
+
 

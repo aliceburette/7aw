@@ -13,37 +13,24 @@ registerRoute.post('/create', (req, res) => {
   registerController.create(req, register => {
     //Creation of payload for token auth
     let payload = { subject : register.insertId};
-    let token = jwt.sign(payload, 'ItsASecretKey', {expiresIn: 60 * 60});
+    let token = jwt.sign(payload, 'UnMoineauUnijambiste', {expiresIn: 60 * 60});
     res.status(200).json({token});
   })
 });
 
-registerRoute.post("/login", (req,res) => {
-  registerController.loginUser(req, register =>{
-    if(register === undefined || !bcrypt.compareSync(req.body.password, register.MOTDEPASSE)){
+registerRoute.post('/login', (req,res) => {
+  registerController.loginRegister(req, register =>{
+    if(register === undefined || !bcrypt.compareSync(req.body.password, register.motdepasse)){
       res.status(401).json(register);
     } else {
-      const payload = { subject : register.id_utilisateur }
-      const token = jwt.sign(payload, 'ItsASecretKey', {expiresIn: 60 * 60});
-      res.status(200).json({token});
-    }
-  })
-});
-
-module.exports = registerRoute;
-
-
-
-
-/*registerRoute.get("/getAdmin", token.getUserIdFromToken)
-{
-  return registerController.isAdmin(req, req.idUser);
-};*/
-
-registerRoute.get("/getAdmin", token.getUserIdFromToken, (req,res) => {
-  registerController.isAdmin(req, req.idUser, bool => {
-    return res.status(200).json(bool);
+        const payload = { subject : register.id_utilisateur };
+        const token = jwt.sign(payload, 'UnMoineauUnijambiste', {expiresIn: 60 * 60});
+        console.log(register);
+        const admin = register.administrateur;
+        res.status(200).json({token, admin});
+      }});
   });
-});
 
 module.exports = registerRoute;
+
+

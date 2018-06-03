@@ -23,11 +23,11 @@ export class AdminGroupEditComponent implements OnInit {
   }
 
   setName(event) {
-    this.group.NOM = event.target.value;
+    this.group.nom = event.target.value;
   }
 
   setDescription(event) {
-    this.group.DESCRIPTION = event.target.value;
+    this.group.description = event.target.value;
   }
 
 }

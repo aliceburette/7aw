@@ -26,6 +26,7 @@ export class ConnectComponent implements OnInit {
     this.registerService.login(this.connectForm.value).subscribe(
       res => {
         localStorage.setItem('token', res.token);
+        localStorage.setItem('admin', res.admin);
         this.router.navigate(['/']);
       },
       err => {

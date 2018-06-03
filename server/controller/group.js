@@ -2,10 +2,10 @@ module.exports.getAll = function(req, callback) {
   //La requete
   req.getConnection(function (err, connection) {
     //
-    connection.query("select id_groupe, nom, description FROM groupe", function(err, rows, fields) {
+    connection.query('select id_groupe, nom, description FROM groupe', function(err, rows, fields) {
       if (err) {
         console.log (err);
-        return res.status(300).json("Cannot get group");
+        return res.status(300).json('Cannot get group');
       }
       //Retourner à la route
       callback(rows);
@@ -17,10 +17,10 @@ module.exports.getGroup = function(req, idGroup, callback) {
   //La requete
   req.getConnection(function (err, connection) {
     //
-    connection.query("select * FROM groupe WHERE id_groupe = ?", idGroup, function(err, rows, fields) {
+    connection.query('select * FROM groupe WHERE id_groupe = ?', idGroup, function(err, rows, fields) {
       if (err) {
         console.log (err);
-        return res.status(500).json("Cannot get group");
+        return res.status(500).json('Cannot get group');
       }
       //Retourner à la route
       callback(rows[0]);
@@ -29,7 +29,7 @@ module.exports.getGroup = function(req, idGroup, callback) {
 };
 
 module.exports.create = function(req, callback) {
-  let query="INSERT INTO groupe (nom, description) VALUES (?, ?);";
+  let query='INSERT INTO groupe (nom, description) VALUES (?, ?);';
   const value=[
     req.body.nom,
     req.body.description
@@ -40,7 +40,7 @@ module.exports.create = function(req, callback) {
     connection.query(query, value, function(err, rows, fields) {
       if (err) {
         console.log (err);
-        return res.status(300).json("Cannot create group");
+        return res.status(300).json('Cannot create group');
       }
       //Retourner à la route
       callback(rows);
@@ -49,7 +49,7 @@ module.exports.create = function(req, callback) {
 };
 
 module.exports.update = function(req, callback) {
-  let query="UPDATE groupe SET nom = ?, description = ? WHERE id_groupe = ?;";
+  let query='UPDATE groupe SET nom = ?, description = ? WHERE id_groupe = ?;';
   console.log(req.body.EN_REGLE);
   const value=[
     req.body.nom,
@@ -63,7 +63,7 @@ module.exports.update = function(req, callback) {
     connection.query(query, value, function(err, rows, fields) {
       if (err) {
         console.log (err);
-        return res.status(500).json("Cannot update group");
+        return res.status(500).json('Cannot update group');
       }
       //Retourner à la route
       callback(rows);

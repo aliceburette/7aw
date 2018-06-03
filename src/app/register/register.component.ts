@@ -29,6 +29,7 @@ export class RegisterComponent implements OnInit {
   send() {
     this.registerService.create(this.registerForm.value).subscribe(res => {
         localStorage.setItem('token', res.token);
+        localStorage.setItem('admin', '0');
         this.router.navigate(['/']);
       },
       error => {

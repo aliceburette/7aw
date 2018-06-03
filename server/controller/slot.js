@@ -1,5 +1,5 @@
 module.exports.create = function(req, callback) {
-  let query="INSERT INTO creneau (jour, heure_debut, heure_fin, encadrant, id_groupe ) VALUES (?, ?, ?, ?, ?);";
+  let query='INSERT INTO creneau (jour, heure_debut, heure_fin, encadrant, id_groupe ) VALUES (?, ?, ?, ?, ?);';
   const value=[
     req.body.jour,
     req.body.heure_debut,
@@ -13,7 +13,7 @@ module.exports.create = function(req, callback) {
     connection.query(query, value, function(err, rows, fields) {
       if (err) {
         console.log (err);
-        return res.status(300).json("Cannot create slot");
+        return res.status(300).json('Cannot create slot');
       }
       //Retourner à la route
       callback(rows);

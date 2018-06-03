@@ -18,6 +18,10 @@ export class MemberService {
     return this.http.get<any>('api/member/getIncomplete');
   }
 
+  getByRegister(): Observable<any> {
+    return this.http.get<any>('api/member/getByRegister');
+  }
+
   create(member: Member) {
     return this.http.post<Member>('api/member/create', member);
   }

@@ -28,7 +28,7 @@ groupRoute.post('/create', token.verifyAdmin,  (req, res) => {
   });
 });
 
-groupRoute.put('/update', (req, res) => {
+groupRoute.put('/update', token.verifyAdmin, (req, res) => {
   groupController.update(req, group => {
     return res.status(200).json(group);
   });

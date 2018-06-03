@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {RegisterService} from '../share/service/register.service';
 
 @Component({
   selector: 'app-menubar',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenubarComponent implements OnInit {
 
-  constructor() { }
+  constructor(public registerService: RegisterService) { }
 
   ngOnInit() {
   }

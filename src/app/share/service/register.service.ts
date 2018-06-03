@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Register} from '../model/register.models';
+import {Router} from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RegisterService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   create(registerUser: Register) {
     return this.http.post<any>('api/register/create', registerUser);
@@ -22,5 +23,15 @@ export class RegisterService {
 
   loggedIn() {
     return !!localStorage.getItem('token');
+  }
+
+  logOut() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('admin');
+    this.router.navigate(['']);
+  }
+
+  isAdmin() {
+    return (localStorage.getItem('admin') === '1');
   }
 }
